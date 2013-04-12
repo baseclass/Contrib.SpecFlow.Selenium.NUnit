@@ -139,3 +139,23 @@ Wouldn't it be nice to write the scenario like that:
 		| ``summandOne``| ``summandTwo``|``result``|<br />
 		| 10   | 20   | 30   |<br />
 		| 3       | 4       | 7       |<br />
+		
+____________________
+
+###Bindings
+
+Until now I've included one binding:
+
+Regex: I navigated to (.*)
+Example Usage for navigating to Root:
+Given I navigated to /
+
+Logic:
+
+Looks for the seleniumBaseUrl in the App settings and navigates with to the concatonated url of {seleniumBaseUrl}{passedUrl}
+
+```xml
+<appSettings>
+    <add key="seleniumBaseUrl" value="http://localhost:58909" />
+</appSettings>
+```
