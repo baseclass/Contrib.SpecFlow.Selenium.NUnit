@@ -146,13 +146,13 @@ ____________________
 
 Until now I've included one binding:
 
-Regex: I navigated to (.*)
-Example Usage for navigating to Root:
-Given I navigated to /
-
-Logic:
-
-Looks for the seleniumBaseUrl in the App settings and navigates with to the concatonated url of {seleniumBaseUrl}{passedUrl}
+Regex: I navigated to (.*)<br />
+Example Usage for navigating to Root:<br />
+Given I navigated to /<br />
+<br />
+Logic:<br />
+<br />
+Looks for the seleniumBaseUrl in the App settings and navigates with to the concatonated url of {seleniumBaseUrl}{passedUrl}<br />
 
 ```xml
 <appSettings>
