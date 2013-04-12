@@ -61,7 +61,9 @@ https://www.nuget.org/packages/Baseclass.Contrib.SpecFlow.Selenium.NUnit/
 		| ``summandOne``| ``summandTwo``|``result``|<br />
 		| 10   | 20   | 30   |<br />
 		| 3       | 4       | 7       |<br />
+_______________
 
+Blogpost: http://www.baseclass.ch/blog/Lists/Beitraege/Post.aspx?ID=4&mobile=0
 _______________
 Using SpecFlow with Selenium without Baseclass.Contrib.SpecFlow.Selenium.NUnit
 ----
