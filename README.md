@@ -27,20 +27,20 @@ This project was created to be able to use Selenium with SpecFlow as easy as pos
 
 ###Before
 
-``Scenario Outline:`` Add Two Numbers
-    >``Given`` I navigated to **/** using ``<browser>``
-    ``And`` I have entered ``<summandOne>`` into **summandOne** calculator
-	``And`` I have entered ``<summandTwo>`` into **summandTwo** calculator
-	``When`` I press add
-	``Then`` the result should be ``<result>`` on the screen
-	Scenarios: 
-		| ``browser``| ``summandOne``| ``summandTwo``|``result``|
-		| Chrome   | 10   | 20   | 30   |
-		| Firefox  | 10  | 20  | 30  |
-		| IE   | 10   | 20   | 30   |
-		| Chrome       | 3       | 4       | 7       |
-		| Firefox       | 3       | 4       | 7       |
-		| IE       | 3       | 4       | 7       |
+``Scenario Outline:`` Add Two Numbers<br />
+    >``Given`` I navigated to **/** using ``<browser>``<br />
+    ``And`` I have entered ``<summandOne>`` into **summandOne** calculator<br />
+	``And`` I have entered ``<summandTwo>`` into **summandTwo** calculator<br />
+	``When`` I press add<br />
+	``Then`` the result should be ``<result>`` on the screen<br />
+	Scenarios: <br />
+		| ``browser``| ``summandOne``| ``summandTwo``|``result``|<br />
+		| Chrome   | 10   | 20   | 30   |<br />
+		| Firefox  | 10  | 20  | 30  |<br />
+		| IE   | 10   | 20   | 30   |<br />
+		| Chrome       | 3       | 4       | 7       |<br />
+		| Firefox       | 3       | 4       | 7       |<br />
+		| IE       | 3       | 4       | 7       |<br />
 
 ###After
 
