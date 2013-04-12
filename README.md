@@ -7,7 +7,7 @@ Configures SpecFlow to be able to easily use Selenium for WebTesting.
 
 Creating automated web tests to test an application in addition to testing the application with unit tests is a good practice. SpecFlow supports behavior driven development and acceptance tests driven development.
 
-This project was created to be able to use Selenium with SpecFlow as easy as possible, and at the same time to be able to use it in an Continuos Integration Environment.
+This project was created to be able to use Selenium with SpecFlow as easy as possible, and at the same time to be able to use it in a Continuos Integration Environment.
 
 ###Features:
 
@@ -22,7 +22,7 @@ This project was created to be able to use Selenium with SpecFlow as easy as pos
     -  Does every scenario describing the acceptance tests for every browser? Mark the scenario with the supported Browser.
 
 - Adds the browser name as TestCategory
-    - Just run the tests with the categories for the browser you actually have on the environment. Example: Don't run Android browser test as I don't have an android device attached on my machine.
+    - Just run the tests with the categories for the browser you actually have on the environment. Example: Don't run Android browser test as I don't have an android device attached to my machine.
 
 
 ###Before
