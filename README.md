@@ -25,6 +25,10 @@ This project was created to be able to use Selenium with SpecFlow as easy as pos
     - Just run the tests with the categories for the browser you actually have on the environment. Example: Don't run Android browser test as I don't have an android device attached to my machine.
 
 
+Get it from Nuget.org:
+
+https://www.nuget.org/packages/Baseclass.Contrib.SpecFlow.Selenium.NUnit/
+
 ###Before
 
 ``Scenario Outline:`` Add Two Numbers<br />
