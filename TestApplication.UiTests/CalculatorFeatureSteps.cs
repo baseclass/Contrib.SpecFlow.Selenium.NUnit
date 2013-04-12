@@ -3,11 +3,13 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using TechTalk.SpecFlow;
+using Baseclass.Contrib.SpecFlow.Selenium.NUnit;
+using Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings;
 
 namespace TestApplication.UiTests
 {
     [Binding]
-    public class CalculatorFeatureSteps : BrowserSetup
+    public class CalculatorFeatureSteps
     {
         private WebDriverWait wait;
         public WebDriverWait Wait
@@ -16,7 +18,7 @@ namespace TestApplication.UiTests
             {
                 if (wait == null)
                 {
-                    this.wait = new WebDriverWait(this.Driver, TimeSpan.FromSeconds(10));
+                    this.wait = new WebDriverWait(Browser.Current, TimeSpan.FromSeconds(10));
                 }
                 return wait;
             }
@@ -42,5 +44,14 @@ namespace TestApplication.UiTests
 
             Assert.AreEqual(p0.ToString(), result.Text);
         }
+
+        [Then(@"browser title is (.*)")]
+        public void ThenBrowserTitleIs(string title)
+        {
+            var result = Wait.Until(d => d.Title);
+
+            Assert.AreEqual(title, result);
+        }
+
     }
 }

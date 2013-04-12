@@ -14,6 +14,8 @@
 namespace TestApplication.UiTests
 {
     using TechTalk.SpecFlow;
+    using Autofac;
+    using Autofac.Configuration;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
@@ -23,6 +25,10 @@ namespace TestApplication.UiTests
     public partial class CalculatorFeatureFeature
     {
         
+        private OpenQA.Selenium.IWebDriver driver;
+        
+        private IContainer container;
+        
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
 #line 1 "CalculatorFeature.feature"
@@ -31,9 +37,12 @@ namespace TestApplication.UiTests
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(new ConfigurationSettingsReader());
+            this.container = builder.Build();
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CalculatorFeature", "In order to avoid silly mistakes\r\nAs a math idiot\r\nI want to be told the sum of t" +
-                    "wo numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CalculatorFeature", "In order to avoid silly mistakes \r\nAs a math idiot\r\nI want to be told the sum of " +
+                    "two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -58,33 +67,76 @@ namespace TestApplication.UiTests
         public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioStart(scenarioInfo);
+            if(this.driver != null)
+                ScenarioContext.Current.Add("Driver", this.driver);
+            if(this.container != null)
+                ScenarioContext.Current.Add("Container", this.container);
         }
         
         public virtual void ScenarioCleanup()
         {
+            try { System.Threading.Thread.Sleep(50); this.driver.Quit(); } catch (System.Exception) {}
+            this.driver = null;
+            ScenarioContext.Current.Remove("Driver");
+            ScenarioContext.Current.Remove("Container");
             testRunner.CollectScenarioErrors();
+        }
+        
+        private void InitializeSelenium(string browser)
+        {
+            this.driver = this.container.ResolveNamed<OpenQA.Selenium.IWebDriver>(browser);
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Basepage is Calculator")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", Category="Chrome", TestName="BasepageIsCalculator on Chrome")]
+        [NUnit.Framework.TestCaseAttribute("IE", Category="IE", TestName="BasepageIsCalculator on IE")]
+        [NUnit.Framework.TestCaseAttribute("Firefox", Category="Firefox", TestName="BasepageIsCalculator on Firefox")]
+        public virtual void BasepageIsCalculator(string browser)
+        {
+            InitializeSelenium(browser);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Basepage is Calculator", new string[] {
+                        "Browser:Chrome",
+                        "Browser:IE",
+                        "Browser:Firefox"});
+#line 9
+this.ScenarioSetup(scenarioInfo);
+#line 10
+ testRunner.Given("I navigated to /", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 11
+ testRunner.Then("browser title is Calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add Two Numbers")]
-        [NUnit.Framework.TestCaseAttribute("IE", "50", "70", "120", null)]
-        [NUnit.Framework.TestCaseAttribute("Chrome", "50", "70", "120", null)]
-        [NUnit.Framework.TestCaseAttribute("IE", "1", "10", "11", null)]
-        [NUnit.Framework.TestCaseAttribute("Chrome", "1", "10", "11", null)]
+        [NUnit.Framework.TestCaseAttribute("IE", "50", "70", "120", null, Category="IE", TestName="AddTwoNumbers on IE with: \"50\" ,\"70\" ,\"120\"")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", "50", "70", "120", null, Category="Chrome", TestName="AddTwoNumbers on Chrome with: \"50\" ,\"70\" ,\"120\"")]
+        [NUnit.Framework.TestCaseAttribute("IE", "1", "10", "11", null, Category="IE", TestName="AddTwoNumbers on IE with: \"1\" ,\"10\" ,\"11\"")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", "1", "10", "11", null, Category="Chrome", TestName="AddTwoNumbers on Chrome with: \"1\" ,\"10\" ,\"11\"")]
         public virtual void AddTwoNumbers(string browser, string summandOne, string summandTwo, string result, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Two Numbers", exampleTags);
-#line 6
+            InitializeSelenium(browser);
+            string[] @__tags = new string[] {
+                    "Browser:IE",
+                    "Browser:Chrome"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Two Numbers", @__tags);
+#line 15
 this.ScenarioSetup(scenarioInfo);
-#line 7
- testRunner.Given(string.Format("I navigated to / with {0}", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
+#line 16
+ testRunner.Given("I navigated to /", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 17
  testRunner.And(string.Format("I have entered {0} into summandOne calculator", summandOne), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
+#line 18
  testRunner.And(string.Format("I have entered {0} into summandTwo calculator", summandTwo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
+#line 19
  testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
+#line 20
  testRunner.Then(string.Format("the result should be {0} on the screen", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

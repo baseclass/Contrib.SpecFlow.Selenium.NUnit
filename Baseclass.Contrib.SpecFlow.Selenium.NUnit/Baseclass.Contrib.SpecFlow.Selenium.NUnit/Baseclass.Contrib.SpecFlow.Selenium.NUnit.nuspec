@@ -1,0 +1,33 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Baseclass.Contrib.SpecFlow.Selenium.NUnit</id>
+    <version>1.0</version>
+	<title>Baseclass.Contrib.SpecFlow.Selenium.NUnit</title>
+    <authors>Daniel Romero</authors>
+    <owners>baseclass</owners>
+    <licenseUrl>http://www.baseclass.ch/documents/MITLicense.txt</licenseUrl>
+    <projectUrl>http://www.baseclass.ch/Contrib/SpecFlowSelenium</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Test class generator to drive automated web ui tests with Selenium and SpecFlow</summary>
+    <description>Configures SpecFlow to be able to easily use Selenium for WebTesting.
+    Makes it possible to annotate a scenario with the browser it's supposed to work with.
+    </description>
+    <tags>Selenium NUnit SpecFlow Gherkin Web Testing webtesting</tags>
+    <frameworkAssemblies>
+       <frameworkAssembly assemblyName="System.Configuration"  />
+    </frameworkAssemblies>
+    <dependencies>
+      <dependency id="SpecFlow" version="1.9.0" />
+      <dependency id="NUnit" version="2.6" />
+      <dependency id="Autofac" version="3.0.1" />
+      <dependency id="Selenium.Support" version="2.31.2" />
+    </dependencies>
+  </metadata> 
+  <files>
+    <file src="bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.SpecFlowPlugin.dll" target="tools" />
+    <file src="bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.SpecFlowPlugin.dll" target="lib\net45" />
+    <file src="bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.dll" target="lib\net45" />
+    <file src="App.config.transform" target="content" />
+  </files>
+</package>
