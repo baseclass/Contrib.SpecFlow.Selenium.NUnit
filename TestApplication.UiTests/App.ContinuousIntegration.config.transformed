@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="specFlow" type="TechTalk.SpecFlow.Configuration.ConfigurationSectionHandler, TechTalk.SpecFlow" />
+    <section name="autofac" type="Autofac.Configuration.SectionHandler, Autofac.Configuration" />
+  </configSections>
+  <specFlow>
+    <!-- For additional details on SpecFlow configuration options see http://go.specflow.org/doc-config -->
+    <unitTestProvider name="SeleniumNUnit" />
+    <plugins>
+      <add name="Baseclass.Contrib.SpecFlow.Selenium.NUnit" path="..\packages\Baseclass.Contrib.SpecFlow.Selenium.NUnit.1.0\tools" />
+    </plugins>
+    <stepAssemblies>
+      <stepAssembly assembly="Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings" />
+    </stepAssemblies>
+  </specFlow>
+  <appSettings>
+    <add key="seleniumBaseUrl" value="http://localhost:58909" />
+  </appSettings>
+  <autofac>
+    <components>
+      <component name="IE" type="TestApplication.UiTests.IERemoteWebDriver, TestApplication.UiTests" service="OpenQA.Selenium.IWebDriver, WebDriver"
+        instance-scope="per-dependency">
+        <parameters>
+          <parameter name="url" value="http://127.0.0.1:4444/wd/hub"/>
+        </parameters>
+      </component>
+      <component name="Chrome" type="OpenQA.Selenium.Remote.RemoteWebDriver, WebDriver" service="OpenQA.Selenium.IWebDriver, WebDriver"
+        instance-scope="per-dependency">
+        <parameters>
+          <parameter name="url" value="http://127.0.0.1:4444/wd/hub"/>
+          <parameter name="desiredCapabilities" value="Chrome">
+          </parameter>
+        </parameters>
+      </component>
+    </components>
+  </autofac>
+</configuration>
