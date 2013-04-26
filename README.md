@@ -159,3 +159,5 @@ Looks for the seleniumBaseUrl in the App settings and navigates with to the conc
     <add key="seleniumBaseUrl" value="http://localhost:58909" />
 </appSettings>
 ```
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/d7930eaf1c10b35079d3896f24384f5c "githalytics.com")](http://githalytics.com/baseclass/Contrib.SpecFlow.Selenium.NUnit)
