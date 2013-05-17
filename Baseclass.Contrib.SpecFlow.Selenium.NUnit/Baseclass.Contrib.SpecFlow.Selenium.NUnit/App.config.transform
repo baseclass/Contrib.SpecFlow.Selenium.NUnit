@@ -38,12 +38,12 @@
       <!-- Example of using an injected RemoteDriver:
       <component
               name="IE"
-              type="Baseclass.Contrib.SpecFlow.Selenium.NUnit.RemoteWebDriver, Baseclass.Contrib.SpecFlow.Selenium.NUnit"
+              type="Baseclass.Contrib.SpecFlow.Selenium.NUnit.RemoteWebDriver, Baseclass.Contrib.SpecFlow.Selenium.NUnit.SpecFlowPlugin"
               service="OpenQA.Selenium.IWebDriver, WebDriver"
               instance-scope="per-dependency">
         <parameters>
           <parameter name="url" value="http://127.0.0.1:4444/wd/hub" />
-          <parameter name="desiredCapabilities" value="InternetExplorer">
+          <parameter name="browser" value="InternetExplorer">
           </parameter>
         </parameters>
       </component>-->
