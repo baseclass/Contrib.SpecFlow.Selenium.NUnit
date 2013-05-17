@@ -29,7 +29,28 @@ namespace Baseclass.Contrib.SpecFlow.Selenium.NUnit
         public RemoteWebDriver(string url, string browser)
             : base(new Uri(url), GetCapabilities(browser))
         {
-            
+
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="RemoteWebDriver"/>
+        /// Retrieves the <see cref="DesiredCapabilities"/> by calling the static method on <see cref="DesiredCapabilities"/>
+        /// with the same name as <paramref name="browser"/>
+        /// Example: Calls DesiredCapabilites.InternetExplorer() if <paramref name="browser"/> is specified as InternetExplorer
+        /// </summary>
+        /// <param name="url">
+        /// Url pointing to the Selenium web server
+        /// </param>
+        /// <param name="browser">
+        /// Name of the browser to use for testing
+        /// </param>
+        /// <param name="capabilities">
+        /// Capabilities to set on the browsers desired capabilities
+        /// </param>
+        public RemoteWebDriver(string url, string browser, Dictionary<string, string> capabilities)
+            : base(new Uri(url), GetCapabilities(browser, capabilities))
+        {
+
         }
 
 
@@ -42,7 +63,7 @@ namespace Baseclass.Contrib.SpecFlow.Selenium.NUnit
         /// <returns>
         /// Instance of DesiredCapabilities describing the browser
         /// </returns>
-        private static DesiredCapabilities GetCapabilities(string browserName)
+        private static DesiredCapabilities GetCapabilities(string browserName, Dictionary<string, string> additionalCapabilities = null)
         {
             var capabilityCreationMethod = typeof(DesiredCapabilities)
                 .GetMethod(browserName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
@@ -58,6 +79,14 @@ namespace Baseclass.Contrib.SpecFlow.Selenium.NUnit
             if (capabilities == null)
             {
                 throw new NotSupportedException("Can't find DesiredCapabilities with name " + browserName);
+            }
+
+            if (additionalCapabilities != null)
+            {
+                foreach (var capability in additionalCapabilities)
+                {
+                    capabilities.SetCapability(capability.Key, capability.Value);
+                }
             }
 
             return capabilities;
