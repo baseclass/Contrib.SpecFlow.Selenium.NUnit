@@ -11,8 +11,9 @@ This project was created to be able to use Selenium with SpecFlow as easy as pos
 
 ###Release notes:
 
-1.1 Added support for passing desired capabilities to the RemoteWebDriver
-		Example using SauceLabs as remote web driver: http://www.baseclass.ch/blog/Lists/Beitraege/Post.aspx?ID=5&mobile=0
+1.1 Added support for passing desired capabilities to the RemoteWebDriver.
+
+Example using SauceLabs as remote web driver: http://www.baseclass.ch/blog/Lists/Beitraege/Post.aspx?ID=5&mobile=0
 
 ###Features:
 
