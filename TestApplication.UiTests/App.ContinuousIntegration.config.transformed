@@ -2,10 +2,16 @@
 <configuration>
   <configSections>
     <section name="specFlow" type="TechTalk.SpecFlow.Configuration.ConfigurationSectionHandler, TechTalk.SpecFlow" />
+
     <section name="autofac" type="Autofac.Configuration.SectionHandler, Autofac.Configuration" />
   </configSections>
+
+
+
+  <appSettings>
+    <add key="seleniumBaseUrl" value="http://localhost:58909" />
+  </appSettings>
   <specFlow>
-    <!-- For additional details on SpecFlow configuration options see http://go.specflow.org/doc-config -->
     <unitTestProvider name="SeleniumNUnit" />
     <plugins>
       <add name="Baseclass.Contrib.SpecFlow.Selenium.NUnit" path="..\packages\Baseclass.Contrib.SpecFlow.Selenium.NUnit.1.0\tools" />
@@ -14,9 +20,6 @@
       <stepAssembly assembly="Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings" />
     </stepAssemblies>
   </specFlow>
-  <appSettings>
-    <add key="seleniumBaseUrl" value="http://localhost:58909" />
-  </appSettings>
   <autofac>
     <components>
       <component name="IE" type="TestApplication.UiTests.IERemoteWebDriver, TestApplication.UiTests" service="OpenQA.Selenium.IWebDriver, WebDriver"
