@@ -9,7 +9,7 @@
   <specFlow>
     <unitTestProvider name="SeleniumNUnit" />
     <plugins>
-      <add name="Baseclass.Contrib.SpecFlow.Selenium.NUnit" path="..\packages\Baseclass.Contrib.SpecFlow.Selenium.NUnit.1.0\tools" /> 
+      <add name="Baseclass.Contrib.SpecFlow.Selenium.NUnit" path="..\packages\Baseclass.Contrib.SpecFlow.Selenium.NUnit.1.2.0\tools" /> 
     </plugins>
     <stepAssemblies>
       <stepAssembly assembly="Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings" />
