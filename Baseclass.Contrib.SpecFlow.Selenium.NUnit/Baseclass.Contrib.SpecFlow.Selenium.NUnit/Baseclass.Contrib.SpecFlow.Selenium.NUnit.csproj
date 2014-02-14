@@ -65,8 +65,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneratorPlugin.cs" />
+    <Compile Include="ISauceLabsWebDriver.cs" />
     <Compile Include="RemoteWebDriver.cs" />
     <Compile Include="RuntimePlugin.cs" />
+    <Compile Include="SauceLabsWebDriver.cs" />
     <Compile Include="SeleniumNUnitTestGeneratorProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

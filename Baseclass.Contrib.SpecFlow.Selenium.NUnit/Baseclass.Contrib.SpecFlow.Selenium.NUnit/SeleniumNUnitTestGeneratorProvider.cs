@@ -133,8 +133,6 @@ namespace Baseclass.Contrib.SpecFlow.Selenium.NUnit
             generationContext.TestClass.Members.Add(new CodeMemberField("IContainer", "container"));
 
             CreateInitializeSeleniumMethod(generationContext);
-
-            CleanUpSeleniumContext(generationContext);
         }
 
         private static void CreateInitializeSeleniumMethod(TechTalk.SpecFlow.Generator.TestClassGenerationContext generationContext)
@@ -145,14 +143,6 @@ namespace Baseclass.Contrib.SpecFlow.Selenium.NUnit
             initializeSelenium.Statements.Add(new CodeSnippetStatement("            this.driver = this.container.ResolveNamed<OpenQA.Selenium.IWebDriver>(browser);"));
 
             generationContext.TestClass.Members.Add(initializeSelenium);
-        }
-
-        private static void CleanUpSeleniumContext(TechTalk.SpecFlow.Generator.TestClassGenerationContext generationContext)
-        {
-            generationContext.ScenarioCleanupMethod.Statements.Add(new CodeSnippetStatement("            try { System.Threading.Thread.Sleep(50); this.driver.Quit(); } catch (System.Exception) {}"));
-            generationContext.ScenarioCleanupMethod.Statements.Add(new CodeSnippetStatement("            this.driver = null;"));
-            generationContext.ScenarioCleanupMethod.Statements.Add(new CodeSnippetStatement("            ScenarioContext.Current.Remove(\"Driver\");"));
-            generationContext.ScenarioCleanupMethod.Statements.Add(new CodeSnippetStatement("            ScenarioContext.Current.Remove(\"Container\");"));
         }
 
         public void SetTestClassCategories(TechTalk.SpecFlow.Generator.TestClassGenerationContext generationContext, IEnumerable<string> featureCategories)
@@ -212,7 +202,12 @@ namespace Baseclass.Contrib.SpecFlow.Selenium.NUnit
 
         public void FinalizeTestClass(TechTalk.SpecFlow.Generator.TestClassGenerationContext generationContext)
         {
-
+            // Can't be move to SetTestCleanupMethod, as the code at that point misses the .OnScenarioEnd() call.
+            // Make sure this code is at the end!
+            generationContext.TestCleanupMethod.Statements.Add(new CodeSnippetStatement("            try { System.Threading.Thread.Sleep(50); this.driver.Quit(); } catch (System.Exception) {}"));
+            generationContext.TestCleanupMethod.Statements.Add(new CodeSnippetStatement("            this.driver = null;"));
+            generationContext.TestCleanupMethod.Statements.Add(new CodeSnippetStatement("            ScenarioContext.Current.Remove(\"Driver\");"));
+            generationContext.TestCleanupMethod.Statements.Add(new CodeSnippetStatement("            ScenarioContext.Current.Remove(\"Container\");"));
         }
     }
 }

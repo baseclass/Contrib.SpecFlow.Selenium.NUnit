@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Baseclass.Contrib.SpecFlow.Selenium.NUnit</id>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
 	<title>Baseclass.Contrib.SpecFlow.Selenium.NUnit</title>
     <authors>Daniel Romero</authors>
     <owners>baseclass</owners>
@@ -12,6 +12,7 @@
     <summary>Test class generator to drive automated web ui tests with Selenium and SpecFlow</summary>
     <description>Configures SpecFlow to be able to easily use Selenium for WebTesting.
     Makes it possible to annotate a scenario with the browser it's supposed to work with.
+    Contains SauceLabs IWebDriver implementation which has utility methods to update test status.
     </description>
     <tags>Selenium NUnit SpecFlow Gherkin Web Testing webtesting</tags>
     <frameworkAssemblies>
