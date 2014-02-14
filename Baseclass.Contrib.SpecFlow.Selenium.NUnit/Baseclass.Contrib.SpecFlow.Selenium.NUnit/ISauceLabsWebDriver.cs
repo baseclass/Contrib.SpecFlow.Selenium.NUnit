@@ -17,10 +17,13 @@ namespace Baseclass.Contrib.SpecFlow.Selenium.NUnit
         /// <param name="name">
         /// The name of the test which should be updated.
         /// </param>
+        /// <param name="buildNumber">
+        /// The build number.
+        /// </param>
         /// <param name="status">
         /// If the test failed or succeeded.
         /// </param>
-        void UpdateSauceLabsResult(string name, bool status);
+        void UpdateSauceLabsResult(string name, string buildNumber, bool status);
 
         /// <summary>
         /// Gets the current SessionId. Useful to access SauceLabs REST API.

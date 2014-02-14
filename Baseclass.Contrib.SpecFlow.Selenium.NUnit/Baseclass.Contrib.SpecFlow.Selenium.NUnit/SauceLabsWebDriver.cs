@@ -74,10 +74,13 @@ namespace Baseclass.Contrib.SpecFlow.Selenium.NUnit
         /// <param name="name">
         /// The name of the test which should be updated.
         /// </param>
+        /// <param name="buildNumber">
+        /// The build number.
+        /// </param>
         /// <param name="status">
         /// If the test failed or succeeded.
         /// </param>
-        public void UpdateSauceLabsResult(string name, bool status)
+        public void UpdateSauceLabsResult(string name, string buildNumber, bool status)
         {
             var webclient = new WebClient();
 
@@ -87,7 +90,7 @@ namespace Baseclass.Contrib.SpecFlow.Selenium.NUnit
 
             webclient.Credentials = new NetworkCredential(this.UserName, this.AccessKey);
 
-            var update = string.Format("{{\"name\": \"{0}\", \"passed\": {1}}}", name, status.ToString().ToLower());
+            var update = string.Format("{{\"name\": \"{0}\", \"build\": \"{1}\", \"passed\": {2}}}", name, buildNumber, status.ToString().ToLower());
 
             webclient.UploadString(address, "PUT", update);
         }
