@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baseclass.Contrib.SpecFlow.Selenium.NUnit", "Baseclass.Contrib.SpecFlow.Selenium.NUnit\Baseclass.Contrib.SpecFlow.Selenium.NUnit.csproj", "{8B277E9F-1FDB-4D30-944B-A8C17308F62B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A3FBBF03-5A6E-450E-A176-FE39A75CD8DC} = {A3FBBF03-5A6E-450E-A176-FE39A75CD8DC}
@@ -14,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1E2101
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings", "Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.csproj", "{A3FBBF03-5A6E-450E-A176-FE39A75CD8DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baseclass.Contrib.SpecFlow.Selenium.NUnit.40", "Baseclass.Contrib.SpecFlow.Selenium.NUnit.40\Baseclass.Contrib.SpecFlow.Selenium.NUnit.40.csproj", "{78159493-EB21-4715-BC8D-6262FDEA8EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.40", "Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.40\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.40.csproj", "{26EF03B3-C065-41BA-BD2D-1E3A70D56B2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +35,14 @@ Global
 		{A3FBBF03-5A6E-450E-A176-FE39A75CD8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3FBBF03-5A6E-450E-A176-FE39A75CD8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3FBBF03-5A6E-450E-A176-FE39A75CD8DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78159493-EB21-4715-BC8D-6262FDEA8EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78159493-EB21-4715-BC8D-6262FDEA8EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78159493-EB21-4715-BC8D-6262FDEA8EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78159493-EB21-4715-BC8D-6262FDEA8EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26EF03B3-C065-41BA-BD2D-1E3A70D56B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26EF03B3-C065-41BA-BD2D-1E3A70D56B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26EF03B3-C065-41BA-BD2D-1E3A70D56B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26EF03B3-C065-41BA-BD2D-1E3A70D56B2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
