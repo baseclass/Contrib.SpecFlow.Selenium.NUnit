@@ -28,6 +28,10 @@
     </dependencies>
   </metadata> 
   <files>
+    <file src="net45\Install.ps1" target="tools\net45\Install.ps1" />
+    <file src="net40\Install.ps1" target="tools\net40\Install.ps1" />
+    <file src="Uninstall.ps1" target="tools\net45\Uninstall.ps1" />
+    <file src="Uninstall.ps1" target="tools\net45\Uninstall.ps1" />
     <file src="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.40\bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.SpecFlowPlugin.dll" target="lib\net40" />
     <file src="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.40\bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.dll" target="lib\net40" />
     <file src="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit\bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.SpecFlowPlugin.dll" target="lib\net45" />
