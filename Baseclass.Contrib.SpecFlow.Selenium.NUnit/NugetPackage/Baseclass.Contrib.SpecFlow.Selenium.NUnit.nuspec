@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Baseclass.Contrib.SpecFlow.Selenium.NUnit</id>
-    <version>1.3.1</version>
+    <version>1.3.2-test4</version>
 	<title>Baseclass.Contrib.SpecFlow.Selenium.NUnit</title>
     <authors>Daniel Romero</authors>
     <owners>baseclass</owners>
@@ -15,6 +15,7 @@
     Contains SauceLabs IWebDriver implementation which has utility methods to update test status.
     </description>
     <tags>Selenium NUnit SpecFlow Gherkin Web Testing webtesting</tags>
+    <releaseNotes>- Supporting .NET 4.0</releaseNotes>
     <frameworkAssemblies>
        <frameworkAssembly assemblyName="System.Configuration"  />
     </frameworkAssemblies>
@@ -23,13 +24,14 @@
       <dependency id="NUnit" version="2.6" />
       <dependency id="Autofac" version="3.1.1" />
       <dependency id="Autofac.Configuration" version="3.1.0" />
-      <dependency id="Selenium.Support" version="2.35.0" />
+      <dependency id="Selenium.Support" version="2.41.0" />
     </dependencies>
   </metadata> 
   <files>
-    <file src="bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.SpecFlowPlugin.dll" target="tools" />
-    <file src="bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.SpecFlowPlugin.dll" target="lib\net45" />
-    <file src="bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.dll" target="lib\net45" />
+    <file src="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.40\bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.SpecFlowPlugin.dll" target="lib\net40" />
+    <file src="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.40\bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.dll" target="lib\net40" />
+    <file src="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit\bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.SpecFlowPlugin.dll" target="lib\net45" />
+    <file src="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings\bin\Release\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings.dll" target="lib\net45" />
     <file src="App.config.transform" target="content" />
   </files>
 </package>

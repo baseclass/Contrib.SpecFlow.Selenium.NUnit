@@ -1,0 +1,8 @@
+All "web.*.config" transform files will be transformed and output as a series
+of "web.*.config.transformed" files in the build output directory regardless
+of the chosen build configuration.
+
+The same applies to "app.*.config" transform files in non-web projects.
+
+Transformation Syntax documentation is available on MSDN Library:
+http://msdn.microsoft.com/en-us/library/dd465326.aspx

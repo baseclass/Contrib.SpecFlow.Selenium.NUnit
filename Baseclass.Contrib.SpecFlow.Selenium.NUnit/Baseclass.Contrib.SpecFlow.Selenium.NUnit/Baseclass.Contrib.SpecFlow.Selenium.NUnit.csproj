@@ -73,18 +73,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config.transform">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Baseclass.Contrib.SpecFlow.Selenium.NUnit.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <PropertyGroup>
-    <CustBuildCommand>$(NuGetCommand) pack "$(MSBuildProjectDirectory)\Baseclass.Contrib.SpecFlow.Selenium.NUnit.nuspec" -p Configuration=$(Configuration) -o "$(PackageOutputDir)"</CustBuildCommand>
-  </PropertyGroup>
-  <Target Name="AfterBuild">
+  <!--<Target Name="AfterBuild">
     <Exec Command="$(CustBuildCommand)" Condition="$(Configuration) == 'Release'" />
-  </Target>
+  </Target>-->
 </Project>

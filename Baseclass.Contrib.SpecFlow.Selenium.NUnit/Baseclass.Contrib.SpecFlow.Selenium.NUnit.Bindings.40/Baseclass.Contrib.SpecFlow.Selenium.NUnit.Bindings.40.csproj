@@ -26,7 +26,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Baseclass.Contrib.SpecFlow.Selenium.NUnit\bin\Release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -54,16 +54,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings\Browser.cs" >
+    <Compile Include="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings\Browser.cs">
       <Link>Browser.cs</Link>
     </Compile>
-    <Compile Include="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings\Properties\AssemblyInfo.cs" >
+    <Compile Include="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings\packages.config">
-	  <Link>packages.config</Link>
+      <Link>packages.config</Link>
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
