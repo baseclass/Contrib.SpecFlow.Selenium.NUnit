@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Baseclass.Contrib.SpecFlow.Selenium.NUnit</id>
-    <version>1.3.2-test4</version>
+    <version>1.3.2-tn40support1</version>
 	<title>Baseclass.Contrib.SpecFlow.Selenium.NUnit</title>
     <authors>Daniel Romero</authors>
     <owners>baseclass</owners>
