@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A3FBBF03-5A6E-450E-A176-FE39A75CD8DC}</ProjectGuid>
+    <ProjectGuid>{26EF03B3-C065-41BA-BD2D-1E3A70D56B2A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings</RootNamespace>
@@ -54,11 +54,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Browser.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings\Browser.cs" >
+      <Link>Browser.cs</Link>
+    </Compile>
+    <Compile Include="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings\Properties\AssemblyInfo.cs" >
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
+    <None Include="..\Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings\packages.config">
+	  <Link>packages.config</Link>
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
