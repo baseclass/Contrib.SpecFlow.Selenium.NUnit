@@ -12,6 +12,7 @@ Scenario: Basepage is Calculator
 
 @Browser:IE 
 @Browser:Chrome
+@Browser:Firefox
 Scenario Outline: Add Two Numbers
 	Given I navigated to /
 	And I have entered <SummandOne> into summandOne calculator
