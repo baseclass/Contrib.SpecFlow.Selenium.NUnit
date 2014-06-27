@@ -13,6 +13,17 @@ namespace TestApplication.Controllers
 
         public ActionResult Index()
         {
+            if (HttpContext.Request.QueryString.AllKeys.Contains("Language"))
+            {
+                string language = HttpContext.Request.QueryString["Language"];
+                ViewBag.Language = language;
+                ViewBag.Title = (language.Equals("FR", StringComparison.OrdinalIgnoreCase) ? "Calculatrice" : "Calculator");
+            }
+            else
+            {
+                ViewBag.Language = "Unknown";
+                ViewBag.Title = "Calculator";
+            }
             return View();
         }
 
@@ -21,6 +32,8 @@ namespace TestApplication.Controllers
         {
             return View(summandOne + summandTwo);
         }
+
+        
 
     }
 }

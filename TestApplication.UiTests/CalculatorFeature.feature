@@ -9,11 +9,14 @@
 Scenario: Basepage is Calculator
 	Given I navigated to /
 	Then browser title is Calculator
-
-@Browser:IE 
+	
+@Browser:Firefox
 @Browser:Chrome
+@Language:FR
+@Language:COM
+@Language:DE
 Scenario Outline: Add Two Numbers
-	Given I navigated to /
+	Given I went to /
 	And I have entered <SummandOne> into summandOne calculator
 	And I have entered <SummandTwo> into summandTwo calculator
 	When I press add

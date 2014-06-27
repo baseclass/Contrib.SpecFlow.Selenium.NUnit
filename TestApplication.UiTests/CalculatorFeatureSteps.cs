@@ -5,6 +5,7 @@ using System;
 using TechTalk.SpecFlow;
 using Baseclass.Contrib.SpecFlow.Selenium.NUnit;
 using Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings;
+using System.Configuration;
 
 namespace TestApplication.UiTests
 {
@@ -52,6 +53,19 @@ namespace TestApplication.UiTests
 
             Assert.AreEqual(title, result);
         }
+
+        [Given(@"I went to (.*)")]
+        public void GivenIWentTo(string url)
+        {
+            string absoluteUrl = ConfigurationManager.AppSettings["seleniumBaseUrl"];
+            string language = null;
+            if (ScenarioContext.Current.TryGetValue("Language", out language))
+            {
+                url += "?Language=" + language;
+            }
+            Browser.Current.Navigate().GoToUrl(url);
+        }
+
 
     }
 }
