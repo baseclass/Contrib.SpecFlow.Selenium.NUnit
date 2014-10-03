@@ -30,6 +30,8 @@ Example using SauceLabs as remote web driver: http://www.baseclass.ch/blog/Lists
 - Adds the browser name as TestCategory
     - Just run the tests with the categories for the browser you actually have on the environment. Example: Don't run Android browser test as I don't have an android device attached to my machine.
 
+- Annotate scenarios with whatever you want (@Key:Value)
+	- You may have a multilingual site, just annotate your tests with the language and get it back in the ScenarioContext! Your Language is also added as a category so you can run all test for one site.
 
 Get it from Nuget.org:
 
